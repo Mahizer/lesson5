@@ -12,6 +12,8 @@
 #
 # Подсказка: использовать менеджеры контекста.
 
+import json
+
 my_dict = {}
 my_list = []
 with open('firm.txt', encoding='UTF-8') as firm:
@@ -19,6 +21,9 @@ with open('firm.txt', encoding='UTF-8') as firm:
         my_dict[line.split()[0]] = int(line.split()[1]) - int(line.split()[2])
     my_list.append(my_dict)
     my_list.append({'average_profit': sum(my_dict.values()) / len(my_dict.keys())})
-    print(my_dict)
     print(my_list)
+
+with open('firm.json', 'w') as firm_json:
+    json.dump(my_list, firm_json)
+
 
