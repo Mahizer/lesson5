@@ -1,18 +1,14 @@
-# 1. Реализовать скрипт, в котором должна быть предусмотрена функция расчета заработной платы сотрудника.
-# В расчете необходимо использовать формулу: (выработка в часах * ставка в час) + премия.
-# Для выполнения расчета для конкретных значений необходимо запускать скрипт с параметрами.
+# 1. Создать программно файл в текстовом формате, записать в него построчно данные, вводимые пользователем.
+# Об окончании ввода данных свидетельствует пустая строка.
+
+with open('file.txt', 'w') as f_text:
+    my_list = input('Введите предложение: ').split()
+    for line in my_list:
+        f_text.write(line + '\n')
+
+print(f_text)
 
 
-from sys import argv
-
-script_name, hours_argv, rate_per_hour_argv, prize_argv = argv
-
-
-def salary(hours, rate_per_hour, prize):
-    return int(hours) * int(rate_per_hour) + int(prize)
-
-
-print(salary(hours_argv, rate_per_hour_argv, prize_argv))
 
 
 
